@@ -51,3 +51,7 @@ Thumbs.db
 
 # Streamlit secrets (keep config.toml tracked)
 .streamlit/secrets.toml
+
+# Cloned clean project for Ankita
+music_recommendation_system_ankita/
+
