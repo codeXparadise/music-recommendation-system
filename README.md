@@ -197,6 +197,32 @@ OK
 
 ---
 
+## ☁️ Deployment Guide
+
+### 1. Streamlit Community Cloud (Recommended & 100% Free)
+Streamlit Cloud is the native and most optimized platform for Streamlit applications:
+1. Visit **[share.streamlit.io](https://share.streamlit.io/)** and sign in with GitHub.
+2. Click **"New app"**.
+3. Select your repository: `codeXparadise/music-recommendation-system`.
+4. Branch: `main` | Main file path: `app.py`.
+5. Click **"Deploy!"**.
+> [!NOTE]
+> `.streamlit/config.toml` is pre-configured with theme and server optimizations for instant deployment.
+
+---
+
+### 2. Render / Railway
+- **Render**: The repository includes `render.yaml` and `Procfile`. Select **New Web Service**, choose this repo, and Render will automatically detect the build and start commands (`pip install -r requirements.txt && pip install -e .` and `streamlit run app.py`).
+- **Railway**: Connect your GitHub repository on [railway.app](https://railway.app). Railway automatically builds using the included `Dockerfile` or `Procfile`.
+
+---
+
+### 3. Vercel & Netlify
+- **Vercel**: Configuration is provided via `vercel.json` pointing to `app.py`.
+- **Netlify**: Configuration is provided via `netlify.toml`.
+
+---
+
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
