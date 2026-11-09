@@ -1,6 +1,7 @@
 # 🎵 TuneMatch — Real-Time Spotify-Style Music Recommendation System
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![CI](https://github.com/codeXparadise/music-recommendation-system/actions/workflows/ci.yml/badge.svg)](https://github.com/codeXparadise/music-recommendation-system/actions/workflows/ci.yml)
 [![Streamlit App](https://img.shields.io/badge/Streamlit-1.35%2B-FF4B4B.svg?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.3%2B-F7931E.svg?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 [![Tests Passing](https://img.shields.io/badge/Unit%20Tests-19%2F19%20Passed-brightgreen.svg)]()
