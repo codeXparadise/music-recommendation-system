@@ -6,6 +6,8 @@
 [![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.3%2B-F7931E.svg?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 [![Tests Passing](https://img.shields.io/badge/Unit%20Tests-19%2F19%20Passed-brightgreen.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Deploy to Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=codeXparadise/music-recommendation-system&branch=main&mainModule=app.py)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/codeXparadise/music-recommendation-system)
 
 An enterprise-grade, real-time music recommendation system built with Python, Streamlit, and Scikit-Learn. Inspired by Spotify, **TuneMatch** seamlessly blends Content-Based, Collaborative, and Hybrid recommendation engines with live streaming audio previews from the Apple Music / iTunes API, immediate implicit feedback adaptation, dynamic weight tuning, and dual Light/Dark styling.
 
@@ -197,29 +199,50 @@ OK
 
 ---
 
-## ☁️ Deployment Guide
+## ☁️ Free Hosting & Deployment Guide
 
-### 1. Streamlit Community Cloud (Recommended & 100% Free)
-Streamlit Cloud is the native and most optimized platform for Streamlit applications:
-1. Visit **[share.streamlit.io](https://share.streamlit.io/)** and sign in with GitHub.
-2. Click **"New app"**.
+> [!IMPORTANT]
+> **Vercel and Netlify are serverless platforms** designed for stateless APIs (FastAPI/Flask) and static sites; they **cannot run Streamlit apps** because Streamlit requires a persistent, long-running Python process with continuous WebSocket connections (`_stcore/stream`).
+>
+> Use one of the **100% Free** platforms below that natively support Streamlit:
+
+### 1. 🌟 Streamlit Community Cloud (Official, 100% Free & Recommended)
+Streamlit Cloud is built specifically for Streamlit apps and connects directly to your GitHub repository:
+1. Go to **[share.streamlit.io](https://share.streamlit.io/)** and sign in with GitHub.
+2. Click **"New app"** (or use the one-click deploy badge above).
+3. Fill in the details:
+   - **Repository**: `codeXparadise/music-recommendation-system`
+   - **Branch**: `main`
+   - **Main file path**: `app.py`
+4. Click **"Deploy!"** — Your app will be live with free SSL in less than 2 minutes!
+
+---
+
+### 2. 🚀 Render (Free Web Service)
+Render runs persistent background services:
+1. Sign in to **[dashboard.render.com](https://dashboard.render.com/)**.
+2. Click **New +** ➔ **Web Service**.
 3. Select your repository: `codeXparadise/music-recommendation-system`.
-4. Branch: `main` | Main file path: `app.py`.
-5. Click **"Deploy!"**.
-> [!NOTE]
-> `.streamlit/config.toml` is pre-configured with theme and server optimizations for instant deployment.
+4. Render automatically detects the included `render.yaml` and `Procfile`:
+   - **Build Command**: `pip install -r requirements.txt && pip install -e .`
+   - **Start Command**: `streamlit run app.py --server.port=$PORT --server.address=0.0.0.0`
+5. Click **Create Web Service**.
 
 ---
 
-### 2. Render / Railway
-- **Render**: The repository includes `render.yaml` and `Procfile`. Select **New Web Service**, choose this repo, and Render will automatically detect the build and start commands (`pip install -r requirements.txt && pip install -e .` and `streamlit run app.py`).
-- **Railway**: Connect your GitHub repository on [railway.app](https://railway.app). Railway automatically builds using the included `Dockerfile` or `Procfile`.
+### 3. 🤗 Hugging Face Spaces (Free Cloud Hosting)
+1. Go to **[huggingface.co/spaces](https://huggingface.co/spaces)** and click **"Create new Space"**.
+2. Choose **Streamlit** as the Space SDK.
+3. Link your GitHub repository or push this codebase to the Space.
 
 ---
 
-### 3. Vercel & Netlify
-- **Vercel**: Configuration is provided via `vercel.json` pointing to `app.py`.
-- **Netlify**: Configuration is provided via `netlify.toml`.
+### 4. 🐳 Docker / Railway
+The repository includes a production-ready `Dockerfile`:
+```bash
+docker build -t music-recommendation-system .
+docker run -p 8501:8501 music-recommendation-system
+```
 
 ---
 

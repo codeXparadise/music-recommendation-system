@@ -33,3 +33,4 @@ jobs:
     - name: Run automated test suite
       run: |
         python -m unittest discover -s tests -v
+
