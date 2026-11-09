@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "music-recommendation-system"
+version = "1.0.0"
+description = "A music recommendation engine demonstrating content-based, collaborative, and hybrid filtering."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "TuneMatch Team" }
+]
+keywords = ["music", "recommender-system", "machine-learning", "streamlit", "collaborative-filtering", "content-based"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "streamlit>=1.35",
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "scikit-learn>=1.3",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black",
+    "flake8",
+]
+
+[project.scripts]
+tunematch = "music_recommender.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
